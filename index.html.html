@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map UiTM Perlis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<meta charset="UTF-8">
+<style>
+    * {cursor: url(cute cursor.png), default;}
+</style>
+<body>
+    <div class="nav-bar">
+        <div class="nav-logo">
+            <img src="logo uitm.png" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#" onclick="goToHomePage()">HOME</a></li>
+                <li><a href="#" onclick="toggleMapOptions()">UITM MAP</a>
+                    <ul id="mapOptionsSubMenu" class="submenu">
+                        <li><a href="#" onclick="goToUitmMap('qgis')">QGIS</a></li>
+                        <li><a href="#" onclick="goToUitmMap('arcgis')">ArcGIS</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="toggleServicesSubMenu()">SERVICES</a>
+                    <ul id="servicesSubMenu" class="submenu">
+                        <li><a href="#" onclick="goToService('survey')">Survey Form</a></li>
+                        <li><a href="#" onclick="goToService('blog')">Blog UiTM</a></li>
+                        <li><a href="#" onclick="goToService('library')">Digital Library</a></li>
+                        <li><a href="#" onclick="goToService('social')">Social Media</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="goToContactPage()">CONTACT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="hero">
+        <h1>LET'S EXPLORE<br>UITM ARAU PERLIS!!</h1>
+    </div>
+
+    <script>
+        function goToHomePage() {
+            window.location.href = 'file:///C:/Users/Nur%20Azean/Desktop/MAP%20UITM%20BARU/index.html.html#'; // Replace with the desired URL for Home
+        }
+        
+        function toggleMapOptions() {
+            var submenu = document.getElementById('mapOptionsSubMenu');
+            submenu.classList.toggle('active');
+        }
+        
+        function goToUitmMap(mapType) {
+            var url;
+            switch (mapType) {
+                case 'qgis':
+                    url = 'file:///C:/Users/Nur%20Azean/Desktop/FYP%20SEM%207/qgis2web_2024_06_23-13_11_19_637406/index.html#16/6.4494/100.2789';
+                    break;
+                case 'arcgis':
+                    url = 'https://www.arcgis.com/apps/instant/basic/index.html?appid=9bb654fe4c3a4baa815691ac2af2b4ef'; // Replace with your ArcGIS URL
+                    break;
+                default:
+                    return;
+            }
+            window.location.href = url;
+        }
+        
+        function toggleServicesSubMenu() {
+            var submenu = document.getElementById('servicesSubMenu');
+            submenu.classList.toggle('active');
+        }
+        
+        function goToService(serviceType) {
+            switch (serviceType) {
+                case 'survey':
+                    window.open('https://docs.google.com/forms/d/e/1FAIpQLSemgscVj1tdt3oru93TsvNbgJiFuEOyb4hrQ9dUndhG4n7N_g/viewform', '_blank');
+                    break;
+                case 'blog':
+                    window.open('https://uitm.edu.my/index.php/en', '_blank'); // Replace with your Blog UiTM URL
+                    break;
+                case 'library':
+                    window.open('https://ptarapps.uitm.edu.my/loginv2', '_blank'); // Replace with your Digital Library URL
+                    break;
+                case 'social':
+                    window.open('https://www.instagram.com/mppuitmperlis/?hl=en', '_blank'); // Replace with your Social Media URL
+                    break;
+                // Add more cases as needed
+                default:
+                    break;
+            }
+        }
+
+        function goToContactPage() {
+            window.open('https://perlis.uitm.edu.my/index.php/discover-us/office-directory', '_blank');
+            // Replace with the desired URL for Contact, opening in a new tab
+        }
+    </script>
+</body>
+</html>
